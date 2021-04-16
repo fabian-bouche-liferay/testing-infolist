@@ -1,10 +1,13 @@
 package com.liferay.samples.fbo.my.infolist.model;
 
+import com.liferay.expando.kernel.model.ExpandoBridge;
 import com.liferay.info.item.InfoItemIdentifier;
+import com.liferay.portal.kernel.model.ClassedModel;
 
+import java.io.Serializable;
 import java.util.Optional;
 
-public class Weather {
+public class Weather implements ClassedModel {
 
 	private String location;
 	private int temperature;
@@ -38,6 +41,30 @@ public class Weather {
 				return Optional.empty();
 			}
 		};
+	}
+
+	@Override
+	public ExpandoBridge getExpandoBridge() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Class<?> getModelClass() {
+		return Weather.class;
+	}
+
+	@Override
+	public String getModelClassName() {
+		return Weather.class.getName();
+	}
+
+	@Override
+	public Serializable getPrimaryKeyObj() {
+		return location;
+	}
+
+	@Override
+	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 	}
 	
 }
