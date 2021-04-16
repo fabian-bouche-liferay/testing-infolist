@@ -1,0 +1,5 @@
+Bundle-Name: sample-infolist
+Bundle-SymbolicName: com.liferay.samples.fbo.my.infolist
+Bundle-Version: 1.0.0
+
+Export-Package: com.liferay.samples.fbo.my.infolist.provider
